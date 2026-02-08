@@ -1138,6 +1138,8 @@ section {
 }
 .footer p.thanks {
   padding: 0 10%;
+  text-align: justify;
+  text-align-last: center;
 }
 .footer p.credits {
   font-family: "UVNKeChuyen3", sans-serif;
