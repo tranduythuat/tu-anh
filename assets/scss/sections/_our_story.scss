@@ -1,0 +1,140 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.our-story {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .divider {
+        text-align: center;
+        width: 100%;
+        padding-bottom: 30px;
+
+        .divider-icon {
+            width: 151px;
+            height: auto;
+        }
+    }
+
+    .items {
+        .item {
+            display: flex;
+
+            p.time,
+            h3.title {
+                font-size: 1.063rem;
+                text-transform: uppercase;
+                font-weight: 300;
+                position: relative;
+                top: -5px;
+            }
+
+            h3.title {
+                padding-bottom: 10px;
+            }
+
+            img.overlay {
+                position: absolute;
+            }
+
+            .column {
+                position: relative;
+                flex: 1;
+                padding: 0 30px 50px;
+                text-align: justify;
+                // margin-top: -20px;
+            }
+
+            .column:first-child:after {
+                content: "";
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: $primary-color;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: translateX(50%);
+            }
+        }
+
+        .item-2022 {
+            p.time {
+                text-align: right;
+            }
+
+            img.overlay {
+                width: 70%;
+                height: auto;
+                top: 0;
+                left: 0;
+            }
+
+            .column:first-child {
+                border-right: solid 1px $primary-color;
+            }
+        }
+
+        .item-2023 {
+            h3.title {
+                text-align: right;
+            }
+
+            img.overlay {
+                width: 70%;
+                height: auto;
+                top: 0;
+                right: 0;
+            }
+
+            .column:first-child {
+                border-right: solid 1px $primary-color;
+            }
+        }
+
+        .item-2025 {
+            p.time {
+                text-align: right;
+            }
+
+            img.overlay {
+                width: 70%;
+                height: auto;
+                top: 0;
+                left: 0;
+            }
+
+            .column {
+                padding: 0 30px;
+            }
+
+            .column:first-child {
+                border-right: solid 1px $primary-color;
+            }
+        }
+    }
+
+    @media (max-width: 430px) {
+        .items {
+            .item {
+                .column {
+                    padding: 0 25px 35px;
+                }
+                h3.title {
+                    font-size: .8rem;
+                }
+                p.time {
+                    font-size: .8rem;
+                }
+            }
+
+            .item-2025 {
+                .column {
+                    padding: 0 25px;
+                }
+            }
+        }
+    }
+
+}

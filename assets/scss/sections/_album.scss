@@ -1,0 +1,196 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.album {
+    width: 100%;
+    overflow: hidden;
+
+    &-style .img-box img.film {
+        width: 100%;
+        height: auto;
+    }
+
+    .highlight {
+        width: 100%;
+        min-height: 440px;
+        perspective: 1000px;
+        position: relative;
+
+        img.text-the {
+            width: 91px;
+            height: auto;
+            position: absolute;
+            top: 68px;
+            left: 35px;
+        }
+
+        h2 {
+            font-size: 1.938rem;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        h2.album-text {
+            position: absolute;
+            top: 120px;
+            left: 50px;
+        }
+
+        h2.oflove-text {
+            position: absolute;
+            bottom: 80px;
+            right: 80px;
+        }
+
+        .photo-frame.right {
+            width: 53%;
+            aspect-ratio: 300 / 300;
+            position: absolute;
+            left: 43%;
+            top: -20px;
+        }
+
+        .photo-frame .img-box {
+            box-shadow: $shadow-default;
+        }
+
+        .photo-frame.right .img-box {
+            background-color: #f2ebd8ff;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            transform: rotate(13deg);
+
+            img {
+                width: 100%;
+                height: 75%;
+                // max-width: 275px;
+                // aspect-ratio: 275 / 226;
+                object-fit: cover;
+                // transform: translate(12.5px, 12.5px);
+            }
+        }
+
+        .photo-frame.left {
+            position: absolute;
+            bottom: 55px;
+            right: 45%;
+            width: 45%;
+        }
+
+        .photo-frame.left .img-box {
+            background-color: #f2ebd8ff;
+            max-width: 100%;
+            width: 228px;
+            aspect-ratio: 228 / 228;
+            transform: rotate(-4deg);
+            padding: 10px;
+
+            img {
+                width: 100%;
+                height: 75%;
+                // max-width: 207px;
+                // aspect-ratio: 207 / 170;
+                object-fit: cover;
+                object-position: 50% 20%;
+                // transform: translate(11.5px, 11.5px);
+            }
+        }
+    }
+
+    .slider {
+        .swiper {
+            width: 95%;
+            margin: 10px auto;
+        }
+
+        .main-swiper {
+            height: 80vh;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: $primary-color;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .thumb-swiper {
+            height: 120px;
+            box-sizing: border-box;
+            padding: 0;
+
+            .swiper-slide {
+                width: 25%;
+                height: 100%;
+                opacity: 0.7;
+                cursor: pointer;
+                transition: opacity 0.3s;
+            }
+
+            .swiper-slide-thumb-active {
+                opacity: 1;
+                border-radius: 10px;
+                border: 1px solid $primary-color;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .slider .main-swiper .swiper-button-next,
+    .slider .main-swiper .swiper-button-prev {
+        color: #fffffe;
+    }   
+
+    .slider .main-swiper .swiper-button-next:after, 
+    .slider .main-swiper .swiper-button-prev:after {
+        font-size: 60px;
+        font-weight: 900;
+    }
+
+    @media (max-width: 430px) {
+        .highlight {
+            min-height: 380px;
+            img.text-the {
+                width: 18%;
+                top: 5%;
+            }
+            h2.album-text {
+                font-size: 1.3rem;
+                top: 17%;
+            }
+            h2.oflove-text {
+                bottom: 20%;
+                left: 65%;
+                font-size: 1.3rem;
+            }
+        }
+
+        .slider {
+            .main-swiper {
+                height:75vh;
+            }
+            .thumb-swiper {
+                height: 100px;
+            }
+        }
+    }
+
+    // @media (max-width: 375px) {
+    //     .highlight {
+    //         min-height: 336px;
+    //     }
+    // }
+}

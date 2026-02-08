@@ -1,0 +1,239 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.intro {
+    width: 100%;
+    .content {
+        background: url('../../assets/images/bg/invitation_bg.png') no-repeat center 20%/ contain;
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 500 / 1700;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        .invitation {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            .logo {
+                width: 100%;
+                @include flex-center;
+                padding: 16% 0 12%;
+
+                .box-img {
+                    width: 18%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            .family-info {
+                padding-bottom: 4%;
+                p {
+                    font-size: 11px;
+                    line-height: 1.8;
+                    text-transform: uppercase;
+                }
+
+                img {
+                    width: 16px;
+                    height: auto;
+                }
+            }
+
+            .announcement {
+                p {
+                    font-size: 11px;
+                    line-height: 1.8;
+                }
+            }
+
+            .couple-names {
+                padding: 4% 0;
+
+                h2 {
+                    font-family: $font-hero;
+                    font-size: 45px;
+                    letter-spacing: 1.2px;
+                    font-weight: 300;
+                    margin: 4% 0;
+                }
+            }
+
+            .divider {
+                width: 100%;
+                padding: 4% 0;
+
+                .divider-icon {
+                    width: 60px;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .location-time {
+            text-align: center;
+
+            .top-detail {
+                padding: 3% 0;
+
+                h2 {
+                    font-size: 32px;
+                    font-weight: 300;
+                }
+            }
+
+            .photo-area {
+                width: 100%;
+                padding-top: 2%;
+
+                img.couple-img {
+                    width: 60%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            .invitation-text {
+                padding: 10% 0;
+
+                p {
+                    line-height: 1.8;
+                }
+            }
+
+            .time {
+                h2 {
+                    font-size: 24px;
+                    font-weight: 300;
+                    margin: 1%;
+                }
+            }
+
+            .venue-details {
+                .divider {
+                    width: 100%;
+                    padding: 5% 0 4%;
+
+                    .divider-icon {
+                        width: 70px;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+
+                p.announcement {
+                    padding-bottom: 4%;
+                    font-size: 12px;
+                }
+
+                .location-name {
+                    font-family: $font-hero;
+                    font-size: 42px;
+                    line-height: 1.2;
+                    font-weight: 300;
+                    letter-spacing: 1.2px;
+                    margin-bottom: 2%;
+                }
+
+                .address-info {
+                    font-size: 12px;
+                }
+
+                .map-link {
+                    width: 100%;
+                    padding: 4% 0;
+
+                    a.map-button {
+                        color: $primary-color;
+                        text-decoration: none;
+                        padding: 1% 19%;
+                        border-radius: 15px;
+                        border: solid 1px $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .invitation {
+                .family-info {
+                    p {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
+    
+                    img {
+                        width: calc((16 / 500) * 100vw);
+                    }
+                }
+    
+                .announcement {
+                    p {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
+                }
+    
+                .couple-names {
+                    h2 {
+                        font-size: calc((45 / 500) * 100vw);
+                        letter-spacing: calc((1.2 / 500) * 100vw);
+                    }
+                }
+    
+                .divider {
+                    .divider-icon {
+                        width: calc((60 / 500) * 100vw);
+                    }
+                }
+            }
+    
+            .location-time {
+                .top-detail {
+                    h2 {
+                        font-size: calc((32 / 500) * 100vw);
+                    }
+                }
+    
+    
+                .time {
+                    h2 {
+                        font-size: calc((24 / 500) * 100vw);
+                    }
+                }
+    
+                .venue-details {
+                    .divider {
+                        .divider-icon {
+                            width: calc((70 / 500) * 100vw);
+                        }
+                    }
+
+                    p.announcement {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+    
+                    .location-name {
+                        font-size: calc((42 / 500) * 100vw);
+                        letter-spacing: calc((1.2 / 500) * 100vw);
+                    }
+    
+                    .address-info {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

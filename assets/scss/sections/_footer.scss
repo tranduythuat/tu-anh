@@ -1,0 +1,54 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+    // background: url('../../assets/images/bg/end_pg.webp') no-repeat center/cover;
+    width: 100%;
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+    .logo {
+        width: 100%;
+        margin-bottom: 5%;
+        img {
+            width: 80px;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    p.thanks {
+        padding: 0 10%;
+    }
+
+    p.credits {
+        font-family: "UVNKeChuyen3", sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        padding: 3% 0 10%;
+    }
+
+    p.text-end {
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 3%;
+    }
+
+     @media (max-width: 500px) {
+        .logo {
+            img {
+                width: calc((80 / 500) * 100vw);
+            }
+        }
+    
+        p.credits {
+            font-size: calc((20 / 500) * 100vw);
+        }
+    
+        p.text-end {
+            font-size: calc((10 / 500) * 100vw);
+        }
+    }
+}
