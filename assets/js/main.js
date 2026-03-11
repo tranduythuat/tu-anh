@@ -88,6 +88,13 @@ async function toggleMusic(e) {
   });
 }
 
+window.addEventListener("load", function() {
+  if (window.location.hash === "#rsvp") {
+    document.querySelector("#rsvp").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+});
 
 // Kích hoạt ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
